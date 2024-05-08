@@ -1,5 +1,4 @@
 ﻿@page "/articolo"
-@using System
 
 <div>
     <table>
@@ -7,38 +6,24 @@
             <td><h3>Stampante 3D Ultimaker usata</h3></td>
         </tr>
         <tr>
-            <td>Modello @Nome</td>
+            <td>Modello @stampante.Nome</td>
         </tr>
         <tr>
-            <td>Data di acquisto @strDataAcquisto</td>
+            <td>Data di acquisto @stampante.strDataAcquisto</td>
         </tr>
         <tr>
-            <td>Ore di funzionamento @Ore</td>
+            <td>Ore di funzionamento @stampante.Ore</td>
         </tr>
         <tr>
-            <td><a href="@Pdf">Scarica il manuale</a></td>
+            <td><a href="@stampante.Pdf">Scarica il manuale</a></td>
         </tr>
     </table>    
 </div>
 
-<img style="width:400px;" src="@Immagine"/>
+<img style="width:400px;" src="@stampante.Immagine"/>
 
 @code
 {
     [Parameter]
-    public string? Immagine { get; set; }
-
-    [Parameter]
-    public string? Nome { get; set; }
-    
-    [Parameter]
-    public int? Ore { get; set; }
-
-    [Parameter]
-    public DateTime? DataAcquisto { get; set; }
-
-    public string strDataAcquisto => DataAcquisto?.ToString("d MMMM yyyy", new System.Globalization.CultureInfo("it-IT"));
-
-    [Parameter]
-    public String? Pdf { get; set; }
+    public Stampante stampante {get; set;}
 }
