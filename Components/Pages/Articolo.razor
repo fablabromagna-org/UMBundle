@@ -1,0 +1,44 @@
+﻿@page "/articolo"
+@using System
+
+<div>
+    <table>
+        <tr>
+            <td><h3>Stampante 3D Ultimaker usata</h3></td>
+        </tr>
+        <tr>
+            <td>Modello @Nome</td>
+        </tr>
+        <tr>
+            <td>Data di acquisto @strDataAcquisto</td>
+        </tr>
+        <tr>
+            <td>Ore di funzionamento @Ore</td>
+        </tr>
+        <tr>
+            <td><a href="@Pdf">Scarica il manuale</a></td>
+        </tr>
+    </table>    
+</div>
+
+<img style="width:400px;" src="@Immagine"/>
+
+@code
+{
+    [Parameter]
+    public string? Immagine { get; set; }
+
+    [Parameter]
+    public string? Nome { get; set; }
+    
+    [Parameter]
+    public int? Ore { get; set; }
+
+    [Parameter]
+    public DateTime? DataAcquisto { get; set; }
+
+    public string strDataAcquisto => DataAcquisto?.ToString("d MMMM yyyy", new System.Globalization.CultureInfo("it-IT"));
+
+    [Parameter]
+    public String? Pdf { get; set; }
+}
