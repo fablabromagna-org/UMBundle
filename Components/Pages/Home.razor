@@ -1,28 +1,34 @@
 ﻿@page "/"
 @using System
 
-<h2>Mancano <Scadenza /> giorni al cassonetto.</h2>
-<br />
-<h3>Se ti interessa acquistare una Ultimaker 3 e una Ultimaker 2 in bundle, al costo complessivo di <Scadenza /> Euro, scrivi a posta@fablabromagna.org</h3>
-<br />
 
-<Articolo stampante="@um2"/>
-<br>
-<br>
-<br>
-<br>
-<Articolo stampante="@um3"/>
-<br>
-<br>
-<h1>Note:</h1>
-<p>Le due stampanti sono funzionanti, calibrate, revisionate dai makers di Fablab Romagna APS. (Grazie Francesco!!)<br>
-Non hanno difetti evidenti e non presentano malfunzionamenti.</p>
-<p>Vengono vendute per passaggio a sistemi superiori e sono corredate di due rotoli di filamento PLA e di 6 mesi di garanzia sui difetti che dovessero evidenziare.</p>
-<p>Attenzione: Garanzia non vuol dire assistenza alla stampa.<br>
-Stampare con Ultimaker usando lo slicer Cura non è sempre semplice.<br>
-Le stampanti 3D Cartesiane sono apparecchi che necessitano di un po' di ore (a volte anche giorni) di esperienza per essere utilizzate al meglio.<br>
-Ciò non toglie che ci hanno dato grandi soddisfazioni negli ultimi anni e ce ne separiamo con grande dispiacere perchè fanno parte della nostra storia!<br>
-</p>
+<table>
+    <tr>
+        <td style="width:800px">
+            <p><h2>Mancano <Scadenza /> giorni al cassonetto.</h2></p>
+            <p><h5>Nei nostri makerspace abbiamo a disposizione un certo numero di Ultimaker che non vengono utilizzate perchè i nostri makers preferiscono stampare con i modelli più recenti</h5></p>
+            <p><h5>E' ora di fare un po' di pulizia. :-)</h5></p>
+            <p><h5>Se ti interessa quindi acquistare una Ultimaker 3 al costo di <ValoreDiOggi /> Euro, scrivi a posta@fablabromagna.org</h5></p>
+            <p><h5>Attento però.<br/>Questa è un asta al ribasso dove ogni giorno il prezzo cala di 3 euro!!</h5></p>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr style="vertical-align:top">
+        <td><Articolo stampante="@um3"/></td>
+        <td>&nbsp;</td>
+        <td style="width:400px"><h3>Note:</h3>
+            <p>La stampante è funzionante, calibrata, revisionata dai makers di Fablab Romagna APS. <br/>(Grazie Francesco!!)</p>
+            <p>Non ha difetti evidenti e non presenta malfunzionamenti.</p>
+            <p>Viene venduta corredata di due rotoli di filamento PETG e di 6 mesi di garanzia sui difetti che dovessero evidenziarsi.</p>
+            <p>Attenzione: Garanzia non vuol dire assistenza alla stampa.</p>
+            <p>Stampare con Ultimaker usando lo slicer Cura non è sempre semplice.</p>
+            <p>Le stampanti 3D Cartesiane sono apparecchi che necessitano di un po' di ore (a volte anche giorni) di esperienza per essere utilizzate al meglio.</p>
+            <p>Ciò non toglie che la nostra UM3 ci abbia dato grandi soddisfazioni in questi anni quindi ce ne separiamo con grande dispiacere perchè fa parte della nostra storia!</p>
+            <p><img src="LogoSito3.png" height="40"></p>
+        </td>
+    </tr>
+</table>
 
 @code
 {
@@ -37,7 +43,7 @@ Ciò non toglie che ci hanno dato grandi soddisfazioni negli ultimi anni e ce ne
     Stampante um3 = new Stampante{ 
         Nome="Ultimaker 3",
         Immagine="UM3.jpg",
-        Ore=400,
+        Ore=700,
         DataAcquisto= new DateTime(2017, 1, 1),
         Pdf="https://docs.rs-online.com/107f/1f2b/0900766b81616f51.pdf"
     };

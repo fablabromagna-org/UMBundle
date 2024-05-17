@@ -1,34 +1,8 @@
 ﻿@page "/scadenza"
 
-@miaData.QuantoManca
+@miaData.GiorniRimanenti
 
 @code
 {
     MauriDate miaData = new();
-
-    private class MauriDate
-    {
-
-        public DateTime InizioBundle
-        {
-            get
-            {
-                DateTime d1;
-                DateTime.TryParseExact("01-03-2024", "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out d1);
-                return d1;
-            }
-        }
-
-        public DateTime FineBundle
-        {
-            get{return InizioBundle.AddDays(1000);}
-        }
-
-        public int QuantoManca
-        {
-            get{return (int)FineBundle.Subtract(DateTime.Now).TotalDays;}
-        }
-
-    }
-
 }
